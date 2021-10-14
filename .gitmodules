@@ -1,0 +1,3 @@
+[submodule "ros_essentials_cpp"]
+	path = ros_essentials_cpp
+	url = https://github.com/suyash-more/ros_essentials_cpp.git
