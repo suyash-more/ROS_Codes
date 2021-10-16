@@ -1,0 +1,42 @@
+1. For creating services you need to mention their input and output datatype under a 
+srv file in srv directory in the source folder (src/srv)
+
+2. you need to write the srv file in following format
+int64 A
+int64 B
+---
+int64 Sum
+
+upper part is input and lower side is output
+
+
+3. Add the build depend and exec depend in package.xml
+
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+
+4. Then add "message_generation" package to the find_package block in CMakeLists.txt i.e.
+
+find_package(catkin REQUIRED COMPONENTS
+   roscpp
+   rospy
+   std_msgs
+   message_generation
+)
+
+5. Also export the message_runtime dependency in catkin package block in CMakeLists.txt
+
+catkin_package(
+  ...
+  CATKIN_DEPENDS message_runtime ...
+  ...)
+
+6. Add the .msg file name in the add_service_file block in CMakeLists.txt i.e.
+
+add_service_files(
+  FILES
+  AddTwoInts.srv
+)
+
+7. Use rossrv show {msg_name} to show the type of srv you have made and can use rossrv commands on that srv

@@ -1,0 +1,38 @@
+
+1. Add the build depend and exec depend in package.xml
+
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+
+2. Then add "message_generation" package to the find_package block in CMakeLists.txt i.e.
+
+find_package(catkin REQUIRED COMPONENTS
+   roscpp
+   rospy
+   std_msgs
+   message_generation
+)
+
+3. Also export the message_runtime dependency in catkin package block in CMakeLists.txt
+
+catkin_package(
+  ...
+  CATKIN_DEPENDS message_runtime ...
+  ...)
+
+4. Add the .msg file name in the add_message_file block in CMakeLists.txt i.e.
+
+add_message_files(
+  FILES
+  Num.msg
+)
+
+5. Also put in the std_msgs in the generate_messages function block in CMakeLists.txt
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
+
+6. You can use rosmsg show {msg_name} to show the type of msg and can exploit other utilities for msgs
