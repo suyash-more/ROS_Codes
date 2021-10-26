@@ -1,0 +1,7 @@
+1. To connect the robot machine to the workstation machine you need to mentuon 3 things in the bashrc file 
+which will run at the starting if the bot starts working
+2. The variables you need to set are
+  On the workstation machine
+    ROS_MASTER_URI= http://{DOMAIN_NAME}:{PORT_NUMBER}
+    ROS_HOSTNAME= it is probably the ip itself if you have not configured the bots hostname separately
+    ROS_IP=ip of the robot machine  
