@@ -3,5 +3,9 @@ which will run at the starting if the bot starts working
 2. The variables you need to set are
   On the workstation machine
     ROS_MASTER_URI= http://{DOMAIN_NAME}:{PORT_NUMBER}
-    ROS_HOSTNAME= it is probably the ip itself if you have not configured the bots hostname separately
+    ROS_HOSTNAME= it is probably the ip itself if you have not configured the bots hostname separately or 
+                    you can set it in the /etc/hosts files
     ROS_IP=ip of the robot machine  
+
+if IP is static that is ok
+Check if DHCP then you need to change the ip after every restart of your workstation machine
