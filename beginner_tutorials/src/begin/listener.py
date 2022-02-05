@@ -9,7 +9,7 @@ def callback(data):
 def listener():
     rospy.init_node('listener', anonymous=True)
 
-    rospy.Subscriber("custom_topic", custom_msg, callback)
+    rospy.Subscriber("modiji", custom_msg, callback)
 
     rospy.spin()
 
